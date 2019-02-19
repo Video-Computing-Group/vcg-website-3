@@ -12,7 +12,12 @@ import {
   DropdownMenu,
   DropdownItem
 } from "reactstrap";
+import styled from "styled-components";
+
 import Banner from "./Banner";
+import { darkBlue, yellow } from "../../styled/colors";
+import "./override.css";
+import NavItems from "./NavItems";
 
 class Header extends Component {
   state = {
@@ -27,20 +32,25 @@ class Header extends Component {
 
   render() {
     return (
-      <div>
+      <header>
         <Banner />
-        <Navbar color="light" light expand="md">
+        <Navbar
+          expand="md"
+          style={{
+            backgroundColor: `${darkBlue}`
+          }}
+        >
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="/components/">Components</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">
-                  GitHub
-                </NavLink>
-              </NavItem>
+            <Nav navbar>
+              {NavItems.map(n => (
+                <NavItem key={n.path}>
+                  <NavItemLink to={n.path} activeStyle={{ color: `${yellow}` }}>
+                    {n.name}
+                  </NavItemLink>
+                </NavItem>
+              ))}
+
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
                   Options
@@ -55,9 +65,14 @@ class Header extends Component {
             </Nav>
           </Collapse>
         </Navbar>
-      </div>
+      </header>
     );
   }
 }
 
 export default Header;
+
+const NavItemLink = styled(Link)`
+  display: block;
+  padding: 0.5rem 1rem;
+`;

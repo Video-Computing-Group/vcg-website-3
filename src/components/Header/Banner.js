@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import Logo from "../../images/ucr-logo.png";
-import { darkBlue } from "../../styled/colors";
+import { accentBlue } from "../../styled/colors";
 
 const Banner = () => (
   <Wrapper>
@@ -19,7 +19,7 @@ const Wrapper = styled.header`
   background: white;
   display: flex;
   align-items: center;
-  color: ${darkBlue};
+  color: ${accentBlue};
   padding: 18px;
 
   img {

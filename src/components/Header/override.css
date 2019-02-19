@@ -1,0 +1,22 @@
+.navbar-nav {
+  color: white !important;
+}
+
+.nav-item a {
+  color: white;
+}
+
+.nav-item a:hover,
+a:focus {
+  color: #7bb5ff;
+  text-decoration: none;
+}
+
+.active {
+  color: red;
+}
+
+.navbar-toggler {
+  margin-left: auto;
+  border: 1px solid #fff !important;
+}
