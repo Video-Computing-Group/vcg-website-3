@@ -13,6 +13,7 @@ import {
   DropdownItem
 } from "reactstrap";
 import styled from "styled-components";
+import PhotoBanner from "./PhotoBanner";
 
 import Banner from "./Banner";
 import { darkBlue, yellow } from "../../styled/colors";
@@ -65,6 +66,7 @@ class Header extends Component {
             </Nav>
           </Collapse>
         </Navbar>
+        <PhotoBanner />
       </header>
     );
   }
