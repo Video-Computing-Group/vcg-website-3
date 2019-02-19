@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Header from "./Header";
 import Footer from "./Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { background } from "../styled/colors";
+import { background, primaryText } from "../styled/colors";
 
 const Layout = ({ children }) => (
   <LayoutContainer>
@@ -37,6 +37,7 @@ const LayoutContainer = styled.div`
 `;
 
 const ContentWrapper = styled.main`
-  background: white;
+  background: #f8fafc;
   padding: 30px 5vw;
+  color: ${primaryText};
 `;
