@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import Header from "./Header";
+import Footer from "./Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { background } from "../styled/colors";
 
@@ -9,14 +10,10 @@ const Layout = ({ children }) => (
   <LayoutContainer>
     <Wrapper>
       <Header />
-      <>
-        <ContentWrapper>{children}</ContentWrapper>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </>
+
+      <ContentWrapper>{children}</ContentWrapper>
+
+      <Footer />
     </Wrapper>
   </LayoutContainer>
 );
